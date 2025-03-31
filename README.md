@@ -1,0 +1,1 @@
+# massa_blog_contracts
