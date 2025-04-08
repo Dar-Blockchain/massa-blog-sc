@@ -436,7 +436,17 @@ export function createPost(binaryArgs: StaticArray<u8>): void {
 
   const postId = u64.parse(Storage.get(POST_ID_KEY)); // Get the current post ID.
   const createdAt = timestamp();
-
+  generateEvent(
+    createEvent('CreatePost', [
+      title,
+      excerpt,
+      content,
+      featuredImage,
+      categoryId,
+      readingTime.toString(),
+      tags,
+    ]),
+  );
   // Create a new post object.
   const post = new Post(
     postId,
@@ -451,16 +461,18 @@ export function createPost(binaryArgs: StaticArray<u8>): void {
     createdAt,
   );
 
+  generateEvent(createEvent('CreatePost after after', [postId.toString()]));
+
   postMap.set(postId.toString(), post); // Store the post in the map.
 
   Storage.set(POST_ID_KEY, (postId + 1).toString()); // Increment the post ID counter.
   // Update category count in the factory contract
-  call(
-    new Address(Storage.get(FACTORY_CONTRACT)),
-    '_updateCategoryCount',
-    new Args().add(categoryId).add(true),
-    0,
-  );
+  // call(
+  //   new Address(Storage.get(FACTORY_CONTRACT)),
+  //   '_updateCategoryCount',
+  //   new Args().add(categoryId).add(true),
+  //   0,
+  // );
   generateEvent(
     createEvent('CreatePost', [
       post.id.toString(),

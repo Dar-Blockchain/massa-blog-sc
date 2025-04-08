@@ -16,7 +16,7 @@ console.log('Deploying contract...');
 const byteCode = getScByteCode('build', 'accountsFactory.wasm');
 
 const constructorArgs = new Args().addString(
-  'AS1kbm6GkZkzmKNF9aVTAH3HhAepxepFtRdn6xCfF6dQDpgMjxHo',
+  'AS12v4aYoDW8RZxEmF53qKWjjQpDM64qLMK4pJXWZWQatZSgjptTt',
 );
 const contract = await SmartContract.deploy(
   provider,
