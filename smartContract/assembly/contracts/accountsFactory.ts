@@ -27,11 +27,14 @@ import {
   USERS,
   ONE_UNIT,
   CATEGORIES_KEY,
+  USERS_ID_KEY,
   DEFAULT_CATEGORIES,
 } from './storage';
 import { Post } from '../structs/post';
 import { onlyOwner } from './utils/ownership';
 import { Category } from '../structs/category';
+
+const START_USER_ID = 1;
 
 /**
  * Smart contract constructor - Initializes the contract at deployment.
@@ -220,6 +223,21 @@ export function getProfile(binaryArgs: StaticArray<u8>): StaticArray<u8> {
   return profile.serialize();
 }
 
+
+
+export function getAuthors(binaryArgs: StaticArray<u8>): StaticArray<u8> {
+  let authors: Profile[] = [];
+  const users = new Args(Storage.get(USERS)).nextStringArray().unwrap();
+
+  // Iterate through all users
+  for (let i = 0; i < users.length; i++) {
+    const userProfile = profileMap.get(users[i], new Profile());
+    authors.push(userProfile);
+  }
+  return new Args()
+    .addSerializableObjectArray<Profile>(authors)
+    .serialize();
+}
 /**
  * Updates an existing user's profile information.
  *

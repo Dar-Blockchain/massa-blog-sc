@@ -3,11 +3,14 @@ import { Args, DeserializedResult, Serializable } from '@massalabs/massa-web3';
 export class Post implements Serializable<Post> {
   constructor(
     public id: bigint = 0n, // Use bigint to handle u64 values in JavaScript
-    public author: string = '', // Address serialized as string
-    public text: string = '',
-    public image: string = '',
-    public isRepost: boolean = false,
-    public repostedPostId: bigint = 0n, // Use bigint for u64 values
+    public author: string = '', // Using Address type
+    public title: string = '',
+    public excerpt: string = '',
+    public content: string = '',
+    public featuredImage: string = '',
+    public categoryId: string = '',
+    public readingTime: bigint = 0n,
+    public tags: string = '',
     public createdAt: bigint = 0n, // Use bigint for timestamp
   ) {}
 
@@ -15,14 +18,17 @@ export class Post implements Serializable<Post> {
   serialize(): Uint8Array {
     const args = new Args()
       .addU64(this.id)
-      .addString(this.author) // Author as a string
-      .addString(this.text)
-      .addString(this.image)
-      .addBool(this.isRepost)
-      .addU64(this.repostedPostId)
+      .addString(this.author) // Serialize Address properly
+      .addString(this.title)
+      .addString(this.excerpt)
+      .addString(this.content)
+      .addString(this.featuredImage)
+      .addString(this.categoryId)
+      .addU64(this.readingTime)
+      .addString(this.tags)
       .addU64(this.createdAt);
 
-    return new Uint8Array(args.serialize());
+    return args.serialize();
   }
 
   // Deserialize the data received from the backend
@@ -30,11 +36,14 @@ export class Post implements Serializable<Post> {
     const args = new Args(data, offset);
 
     this.id = args.nextU64(); // Deserialize id as bigint
-    this.author = args.nextString(); // Deserialize author
-    this.text = args.nextString(); // Deserialize text
-    this.image = args.nextString(); // Deserialize image
-    this.isRepost = args.nextBool(); // Deserialize isRepost
-    this.repostedPostId = args.nextU64(); // Deserialize repostedPostId as bigint
+    this.author = args.nextString(); // Deserialize author as Address
+    this.title = args.nextString(); // Deserialize title
+    this.excerpt = args.nextString(); // Deserialize excerpt
+    this.content = args.nextString(); // Deserialize content
+    this.featuredImage = args.nextString(); // Deserialize featuredImage
+    this.categoryId = args.nextString(); // Deserialize categoryId
+    this.readingTime = args.nextU64(); // Deserialize readingTime as bigint
+    this.tags = args.nextString(); // Deserialize tags
     this.createdAt = args.nextU64(); // Deserialize createdAt as bigint
 
     return { instance: this, offset: args.getOffset() };

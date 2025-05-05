@@ -20,6 +20,7 @@ export const START_POST_ID = 1;
 export const START_LIKE_ID = 1;
 export const START_COMMENT_ID = 1;
 export const START_FOLLOW_ID = 1;
+export const USERS_ID_KEY = 'usersId';
 
 /**
  * Key used in storage to track the next available post ID.
@@ -50,6 +51,7 @@ export const FOLLOW_ID_KEY = 'followId';
  * Used for storing and retrieving user profiles based on their unique address.
  */
 export const profileMap = new PersistentMap<string, Profile>('profile');
+export const profile_Address_Map = new PersistentMap<string, string>('profile_Address_Map');
 
 /**
  * A persistent map that associates a post ID (as a string) with a `Post` object.

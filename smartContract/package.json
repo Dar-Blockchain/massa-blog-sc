@@ -10,7 +10,7 @@
         "clean": "rimraf build",
         "deploy": "npm run build && tsx src/deploy.ts",
         "deploy_AccountFactory": "npm run build && tsx src/deploy_AccountFactory.ts",
-        "test_factory" : "tsx src/test_Account_factory.ts",
+        "test_factory" : "npm run build && tsx src/test_Account_factory.ts",
         
         "hello": "tsx src/hello.ts",
         "prettier": "prettier '**/src/**/*.ts' --check && as-prettier --check assembly",
