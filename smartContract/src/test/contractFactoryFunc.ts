@@ -18,6 +18,7 @@ import { Comment } from './structs/comment';
 import { Follow } from './structs/follow';
 
 export async function createProfile(contract: SmartContract,profile:any) {
+  console.log(contract)
   console.log('Creating a profile ...');
 const args = new Args()
   .addString(profile.firstName)
@@ -33,7 +34,7 @@ const args = new Args()
   .addString(profile.website)
   
   const operation = await contract.call('createProfile', args.serialize(), {
-    coins: Mas.fromString('15'),
+    coins: Mas.fromString('25'),
   });
 
   const operationStatus = await operation.waitFinalExecution();
@@ -93,5 +94,70 @@ export async function getProfile(contract: SmartContract, address: string): Prom
     return new Args(result.value).nextSerializable<Profile>(Profile);
   } else {
     throw new Error('Failed to get profile');
+  }
+}
+
+export async function getPostsByAuthor(
+  contract: SmartContract,
+  authorAddress: string,
+  selectionPart: number = 1  // Default to first page
+): Promise<Post[]> {
+  console.log('Getting posts for author:', authorAddress);
+  
+  const args = new Args()
+    .addString(authorAddress)
+    .addU64(BigInt(selectionPart));
+
+  const result = await contract.read('getPostsByAuthor', args.serialize());
+
+  if (result.value) {
+    return new Args(result.value).nextSerializableObjectArray<Post>(Post);
+  } else {
+    throw new Error('Failed to get author posts');
+  }
+}
+
+export async function getPostById(
+  contract: SmartContract,
+  authorAddress: string,
+  postId: bigint
+): Promise<Post> {
+  console.log('Getting post by ID:', postId, 'from author:', authorAddress);
+  
+  const args = new Args()
+    .addString(authorAddress)
+    .addU64(postId);
+
+  const result = await contract.read('getPostById', args.serialize());
+
+  if (result.value) {
+    return new Args(result.value).nextSerializable<Post>(Post);
+  } else {
+    throw new Error('Failed to get post by ID');
+  }
+}
+
+export async function followProfile(
+  contract: SmartContract,
+  userProfile: string,
+  followUserAddress: string
+): Promise<boolean> {
+  console.log('Following user profile:', userProfile);
+  
+  const args = new Args()
+    .addString(followUserAddress);
+
+  const operation = await contract.call('followProfile', args.serialize(), {
+    coins: Mas.fromString('0.02'),
+  });
+
+  const operationStatus = await operation.waitFinalExecution();
+
+  if (operationStatus === OperationStatus.Success) {
+    console.log('Successfully followed profile');
+    return true;
+  } else {
+    console.error('Operation failed with status:', operationStatus);
+    return false;
   }
 }

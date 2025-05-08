@@ -33,6 +33,7 @@ import {
 import { Post } from '../structs/post';
 import { onlyOwner } from './utils/ownership';
 import { Category } from '../structs/category';
+import { IProfile } from './interfaces/IProfile';
 
 const START_USER_ID = 1;
 
@@ -223,8 +224,6 @@ export function getProfile(binaryArgs: StaticArray<u8>): StaticArray<u8> {
   return profile.serialize();
 }
 
-
-
 export function getAuthors(binaryArgs: StaticArray<u8>): StaticArray<u8> {
   let authors: Profile[] = [];
   const users = new Args(Storage.get(USERS)).nextStringArray().unwrap();
@@ -238,6 +237,7 @@ export function getAuthors(binaryArgs: StaticArray<u8>): StaticArray<u8> {
     .addSerializableObjectArray<Profile>(authors)
     .serialize();
 }
+
 /**
  * Updates an existing user's profile information.
  *
@@ -488,4 +488,48 @@ export function _updateCategoryCount(
       .serialize()
       .toString(),
   );
+}
+
+/**
+ * Retrieves a paginated list of posts by author.
+ *
+ * @param {StaticArray<u8>} binaryArgs - Serialized arguments containing the author's address and page number.
+ * @returns {StaticArray<u8>} - Serialized list of posts.
+ */
+export function getPostsByAuthor(binaryArgs: StaticArray<u8>): StaticArray<u8> {
+  const args = new Args(binaryArgs);
+  const authorAddress = args.nextString().unwrap();
+  const selectionPart = args.nextU64().unwrap();
+
+  // Directly get profile contract address from profileMap
+  assert(profileMap.contains(authorAddress), "Author profile not found");
+  const profileContractAddress = profileMap.getSome(authorAddress);
+
+  // Create IProfile instance and get posts
+  const iProfile = new IProfile(new Address(profileContractAddress.profileContract.toString()));
+  const posts = iProfile.getPosts(selectionPart);
+
+  return new Args().addSerializableObjectArray<Post>(posts).serialize();
+}
+
+/**
+ * Retrieves a specific post by its ID from a user's profile
+ *
+ * @param {StaticArray<u8>} binaryArgs - Serialized arguments containing the author's address and post ID
+ * @returns {StaticArray<u8>} - Serialized post data
+ */
+export function getPostById(binaryArgs: StaticArray<u8>): StaticArray<u8> {
+  const args = new Args(binaryArgs);
+  const authorAddress = args.nextString().unwrap();
+  const postId = args.nextU64().unwrap();
+
+  // Get profile from profileMap
+  assert(profileMap.contains(authorAddress), "Author profile not found");
+  const profile = profileMap.getSome(authorAddress);
+
+  // Create IProfile instance and get the post
+  const iProfile = new IProfile(profile.profileContract);
+  const post = iProfile.getPostById(postId);
+
+  return post.serialize();
 }

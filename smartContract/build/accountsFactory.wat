@@ -8,15 +8,15 @@
  (type $6 (func))
  (type $7 (func (param i32 i32 i32)))
  (type $8 (func (param i32 i64)))
- (type $9 (func (param i32 i32 i32 i32)))
- (type $10 (func (param i32 i32 i32 i32) (result i32)))
- (type $11 (func (param i64) (result i32)))
- (type $12 (func (result i64)))
- (type $13 (func (param i32 i32 i32 i64) (result i32)))
- (type $14 (func (param i32) (result i64)))
- (type $15 (func (param i32 i32 i64)))
- (type $16 (func (param i64 i32 i32 i64) (result i32)))
- (type $17 (func (param i32 i64) (result i32)))
+ (type $9 (func (param i32 i64) (result i32)))
+ (type $10 (func (param i32 i32 i32 i32)))
+ (type $11 (func (param i32 i32 i32 i32) (result i32)))
+ (type $12 (func (param i64) (result i32)))
+ (type $13 (func (result i64)))
+ (type $14 (func (param i32 i32 i32 i64) (result i32)))
+ (type $15 (func (param i32) (result i64)))
+ (type $16 (func (param i32 i32 i64)))
+ (type $17 (func (param i64 i32 i32 i64) (result i32)))
  (type $18 (func (param i64 i32) (result i32)))
  (type $19 (func (param i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32) (result i32)))
  (type $20 (func (param i32 i32 i32 i32 i32)))
@@ -57,8 +57,8 @@
  (global $assembly/contracts/storage/followsMap (mut i32) (i32.const 0))
  (global $assembly/contracts/storage/usersFollowsMap (mut i32) (i32.const 0))
  (global $assembly/contracts/storage/DEFAULT_CATEGORIES (mut i32) (i32.const 0))
- (global $~lib/rt/__rtti_base i32 (i32.const 17808))
- (global $~lib/memory/__stack_pointer (mut i32) (i32.const 50800))
+ (global $~lib/rt/__rtti_base i32 (i32.const 17936))
+ (global $~lib/memory/__stack_pointer (mut i32) (i32.const 50936))
  (memory $0 1)
  (data $0 (i32.const 1036) "<")
  (data $0.1 (i32.const 1048) "\02\00\00\00 \00\00\00~\00l\00i\00b\00/\00r\00t\00/\00i\00t\00c\00m\00s\00.\00t\00s")
@@ -430,15 +430,19 @@
  (data $203.1 (i32.const 17624) "\01")
  (data $204 (i32.const 17644) "\1c")
  (data $204.1 (i32.const 17656) "\01")
- (data $205 (i32.const 17676) "<")
- (data $205.1 (i32.const 17688) "\02\00\00\00*\00\00\00O\00b\00j\00e\00c\00t\00 \00a\00l\00r\00e\00a\00d\00y\00 \00p\00i\00n\00n\00e\00d")
- (data $206 (i32.const 17740) "<")
- (data $206.1 (i32.const 17752) "\02\00\00\00(\00\00\00O\00b\00j\00e\00c\00t\00 \00i\00s\00 \00n\00o\00t\00 \00p\00i\00n\00n\00e\00d")
- (data $207 (i32.const 17808) "7\00\00\00 \00\00\00 \00\00\00 ")
- (data $207.1 (i32.const 17832) "d\00\00\00\02\01\00\00\00\00\00\00 ")
- (data $207.2 (i32.const 17908) "\02A\00\00\02\t\00\00\02A\00\00\02A")
- (data $207.3 (i32.const 17936) "B\00\00\00\04A\00\00A\00\00\00 \00\00\00 \00\00\00 \00\00\00B\00\00\00\02\01\00\00\02\02\00\00\02\n\00\00\02\19\00\00\02\1a\00\00\02A\00\00\02A\00\00\02A")
- (data $207.4 (i32.const 18012) "\02A\00\00\00\00\00\00\02A")
+ (data $205 (i32.const 17676) "L")
+ (data $205.1 (i32.const 17688) "\02\00\00\000\00\00\00A\00u\00t\00h\00o\00r\00 \00p\00r\00o\00f\00i\00l\00e\00 \00n\00o\00t\00 \00f\00o\00u\00n\00d")
+ (data $206 (i32.const 17756) ",")
+ (data $206.1 (i32.const 17768) "\02\00\00\00\16\00\00\00g\00e\00t\00P\00o\00s\00t\00B\00y\00I\00d")
+ (data $207 (i32.const 17804) "<")
+ (data $207.1 (i32.const 17816) "\02\00\00\00*\00\00\00O\00b\00j\00e\00c\00t\00 \00a\00l\00r\00e\00a\00d\00y\00 \00p\00i\00n\00n\00e\00d")
+ (data $208 (i32.const 17868) "<")
+ (data $208.1 (i32.const 17880) "\02\00\00\00(\00\00\00O\00b\00j\00e\00c\00t\00 \00i\00s\00 \00n\00o\00t\00 \00p\00i\00n\00n\00e\00d")
+ (data $209 (i32.const 17936) "9\00\00\00 \00\00\00 \00\00\00 ")
+ (data $209.1 (i32.const 17960) "d\00\00\00\02\01\00\00\00\00\00\00 ")
+ (data $209.2 (i32.const 18036) "\02A\00\00\02\t\00\00\02A\00\00\02A")
+ (data $209.3 (i32.const 18064) "B\00\00\00\04A\00\00A\00\00\00 \00\00\00 \00\00\00 \00\00\00B\00\00\00\02\01\00\00\02\02\00\00\02\n\00\00\02\19\00\00\02\1a\00\00\02A\00\00\02A\00\00\02A")
+ (data $209.4 (i32.const 18140) "\02A\00\00\00\00\00\00\02A")
  (table $0 3 3 funcref)
  (elem $0 (i32.const 1) $~lib/@massalabs/massa-as-sdk/assembly/std/context/json2Address~anonymous|0 $assembly/contracts/accountsFactory/getPostsByCategory~anonymous|0)
  (export "getCategories" (func $assembly/contracts/accountsFactory/getCategories))
@@ -462,6 +466,8 @@
  (export "deleteProfile" (func $export:assembly/contracts/accountsFactory/deleteProfile))
  (export "getPostsByCategory" (func $export:assembly/contracts/accountsFactory/getPostsByCategory))
  (export "_updateCategoryCount" (func $export:assembly/contracts/accountsFactory/_updateCategoryCount))
+ (export "getPostsByAuthor" (func $export:assembly/contracts/accountsFactory/getPostsByAuthor))
+ (export "getPostById" (func $export:assembly/contracts/accountsFactory/getPostById))
  (start $~start)
  (func $~lib/rt/itcms/Object#get:color (param $0 i32) (result i32)
   local.get $0
@@ -506,7 +512,7 @@
    i32.load offset=8
    i32.eqz
    local.get $0
-   i32.const 50800
+   i32.const 50936
    i32.lt_u
    i32.and
    i32.eqz
@@ -603,7 +609,7 @@
    i32.const 1
   else
    local.get $2
-   i32.const 17808
+   i32.const 17936
    i32.load
    i32.gt_u
    if
@@ -617,7 +623,7 @@
    local.get $2
    i32.const 2
    i32.shl
-   i32.const 17812
+   i32.const 17940
    i32.add
    i32.load
    i32.const 32
@@ -1304,10 +1310,10 @@
   if
    unreachable
   end
-  i32.const 50800
+  i32.const 50944
   i32.const 0
   call $~lib/@massalabs/as-types/assembly/argument/Args#set:_offset
-  i32.const 52368
+  i32.const 52512
   i32.const 0
   i32.store
   loop $for-loop|0
@@ -1318,7 +1324,7 @@
     local.get $1
     i32.const 2
     i32.shl
-    i32.const 50800
+    i32.const 50944
     i32.add
     i32.const 0
     i32.store offset=4
@@ -1336,7 +1342,7 @@
       i32.add
       i32.const 2
       i32.shl
-      i32.const 50800
+      i32.const 50944
       i32.add
       i32.const 0
       i32.store offset=96
@@ -1354,21 +1360,21 @@
     br $for-loop|0
    end
   end
-  i32.const 50800
-  i32.const 52372
+  i32.const 50944
+  i32.const 52516
   memory.size
   i64.extend_i32_s
   i64.const 16
   i64.shl
   call $~lib/rt/tlsf/addMemory
-  i32.const 50800
+  i32.const 50944
   global.set $~lib/rt/tlsf/ROOT
  )
  (func $~lib/rt/tlsf/__free (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   local.get $0
-  i32.const 50800
+  i32.const 50936
   i32.lt_u
   if
    return
@@ -1484,7 +1490,7 @@
      local.set $0
      loop $while-continue|0
       local.get $0
-      i32.const 50800
+      i32.const 50936
       i32.lt_u
       if
        local.get $0
@@ -1563,7 +1569,7 @@
      unreachable
     end
     local.get $0
-    i32.const 50800
+    i32.const 50936
     i32.lt_u
     if
      local.get $0
@@ -2682,7 +2688,7 @@
    i32.const 3
    i32.eq
    if
-    i32.const 17696
+    i32.const 17824
     i32.const 1056
     i32.const 338
     i32.const 7
@@ -2712,7 +2718,7 @@
   i32.const 3
   i32.ne
   if
-   i32.const 17760
+   i32.const 17888
    i32.const 1056
    i32.const 352
    i32.const 5
@@ -3075,9 +3081,9 @@
   call $~lib/rt/itcms/__visit
   i32.const 1264
   call $~lib/rt/itcms/__visit
-  i32.const 17696
+  i32.const 17824
   call $~lib/rt/itcms/__visit
-  i32.const 17760
+  i32.const 17888
   call $~lib/rt/itcms/__visit
   i32.const 1808
   call $~lib/rt/itcms/__visit
@@ -3268,7 +3274,7 @@
                              i32.const 8
                              i32.sub
                              i32.load
-                             br_table $~lib/object/Object $~lib/arraybuffer/ArrayBuffer $~lib/string/String $folding-inner0 $folding-inner6 $~lib/staticarray/StaticArray<u8> $folding-inner2 $assembly/structs/profile/Profile $~lib/@massalabs/as-types/assembly/serializable/Serializable $folding-inner0 $folding-inner0 $folding-inner0 $assembly/structs/post/Post $folding-inner0 $assembly/structs/repost/Repost $folding-inner0 $assembly/structs/like/Like $folding-inner0 $assembly/structs/comment/Comment $folding-inner0 $assembly/structs/follow/Follow $folding-inner0 $folding-inner0 $assembly/structs/category/Category $folding-inner3 $folding-inner2 $folding-inner3 $folding-inner3 $~lib/function/Function<%28~lib/string/String%2Ci32%2C~lib/array/Array<~lib/string/String>%29=>~lib/@massalabs/massa-as-sdk/assembly/std/address/Address> $folding-inner4 $folding-inner6 $folding-inner2 $~lib/staticarray/StaticArray<~lib/string/String> $~lib/typedarray/Uint8Array $~lib/as-bignum/assembly/integer/i128/i128 $~lib/as-bignum/assembly/integer/u128/u128 $~lib/as-bignum/assembly/integer/u256/u256 $folding-inner2 $folding-inner2 $folding-inner2 $folding-inner2 $folding-inner2 $folding-inner2 $folding-inner3 $folding-inner3 $folding-inner3 $~lib/@massalabs/as-types/assembly/result/Result<u64> $folding-inner4 $folding-inner4 $folding-inner6 $folding-inner3 $folding-inner4 $folding-inner3 $folding-inner4 $~lib/function/Function<%28assembly/structs/post/Post%2Cassembly/structs/post/Post%29=>i32> $invalid
+                             br_table $~lib/object/Object $~lib/arraybuffer/ArrayBuffer $~lib/string/String $folding-inner0 $folding-inner6 $~lib/staticarray/StaticArray<u8> $folding-inner2 $assembly/structs/profile/Profile $~lib/@massalabs/as-types/assembly/serializable/Serializable $folding-inner0 $folding-inner0 $folding-inner0 $assembly/structs/post/Post $folding-inner0 $assembly/structs/repost/Repost $folding-inner0 $assembly/structs/like/Like $folding-inner0 $assembly/structs/comment/Comment $folding-inner0 $assembly/structs/follow/Follow $folding-inner0 $folding-inner0 $assembly/structs/category/Category $folding-inner3 $folding-inner2 $folding-inner3 $folding-inner3 $~lib/function/Function<%28~lib/string/String%2Ci32%2C~lib/array/Array<~lib/string/String>%29=>~lib/@massalabs/massa-as-sdk/assembly/std/address/Address> $folding-inner4 $folding-inner6 $folding-inner2 $~lib/staticarray/StaticArray<~lib/string/String> $~lib/typedarray/Uint8Array $~lib/as-bignum/assembly/integer/i128/i128 $~lib/as-bignum/assembly/integer/u128/u128 $~lib/as-bignum/assembly/integer/u256/u256 $folding-inner2 $folding-inner2 $folding-inner2 $folding-inner2 $folding-inner2 $folding-inner2 $folding-inner3 $folding-inner3 $folding-inner3 $~lib/@massalabs/as-types/assembly/result/Result<u64> $folding-inner4 $folding-inner4 $folding-inner6 $folding-inner3 $folding-inner4 $folding-inner3 $folding-inner4 $~lib/function/Function<%28assembly/structs/post/Post%2Cassembly/structs/post/Post%29=>i32> $folding-inner0 $folding-inner4 $invalid
                             end
                             return
                            end
@@ -3608,7 +3614,7 @@
   memory.size
   i32.const 16
   i32.shl
-  i32.const 50800
+  i32.const 50936
   i32.sub
   i32.const 1
   i32.shr_u
@@ -3627,11 +3633,11 @@
  )
  (func $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i32.const 18032
+  i32.const 18168
   i32.lt_s
   if
-   i32.const 50832
-   i32.const 50880
+   i32.const 50960
+   i32.const 51008
    i32.const 1
    i32.const 1
    call $~lib/builtins/abort
@@ -5296,38 +5302,9 @@
   local.get $6
  )
  (func $~lib/@massalabs/massa-as-sdk/assembly/std/address/Address#constructor (param $0 i32) (result i32)
-  (local $1 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 12
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  call $~stack_check
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  i32.const 4
+  local.get $0
   i32.const 9
-  call $~lib/rt/itcms/__new
-  local.tee $1
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=4
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  local.get $1
-  local.get $0
-  call $"assembly/libraries/PersistentMap/PersistentMap<~lib/string/String,assembly/structs/profile/Profile>#set:_elementPrefix"
-  global.get $~lib/memory/__stack_pointer
-  i32.const 12
-  i32.add
-  global.set $~lib/memory/__stack_pointer
-  local.get $1
+  call $byn$mgfn-shared$~lib/@massalabs/massa-as-sdk/assembly/std/address/Address#constructor
  )
  (func $~lib/string/String#substring (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
@@ -7814,7 +7791,7 @@
   if
    i32.const 9424
    i32.const 9536
-   i32.const 45
+   i32.const 46
    i32.const 3
    call $~lib/builtins/abort
    unreachable
@@ -8336,7 +8313,7 @@
   if
    i32.const 10896
    i32.const 9536
-   i32.const 91
+   i32.const 92
    i32.const 3
    call $~lib/builtins/abort
    unreachable
@@ -8526,7 +8503,7 @@
     if
      i32.const 11408
      i32.const 9536
-     i32.const 101
+     i32.const 102
      i32.const 3
      call $~lib/builtins/abort
      unreachable
@@ -9207,7 +9184,7 @@
     if
      i32.const 12144
      i32.const 9536
-     i32.const 128
+     i32.const 129
      i32.const 3
      call $~lib/builtins/abort
      unreachable
@@ -9842,7 +9819,7 @@
   if
    i32.const 12272
    i32.const 9536
-   i32.const 146
+   i32.const 147
    i32.const 3
    call $~lib/builtins/abort
    unreachable
@@ -9868,7 +9845,7 @@
   if
    i32.const 12400
    i32.const 9536
-   i32.const 151
+   i32.const 152
    i32.const 3
    call $~lib/builtins/abort
    unreachable
@@ -16470,6 +16447,97 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
+ (func $assembly/structs/post/Post#constructor@varargs (result i32)
+  (local $0 i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 60
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  call $~stack_check
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 60
+  memory.fill
+  block $10of10
+   block $8of10
+    block $6of10
+     block $5of10
+      block $4of10
+       block $3of10
+        block $2of10
+         block $1of10
+          block $outOfRange
+           global.get $~argumentsLength
+           br_table $1of10 $1of10 $2of10 $3of10 $4of10 $5of10 $6of10 $8of10 $8of10 $10of10 $10of10 $outOfRange
+          end
+          unreachable
+         end
+         global.get $~lib/memory/__stack_pointer
+         i32.const 2240
+         i32.store
+         global.get $~lib/memory/__stack_pointer
+         i32.const 2240
+         call $~lib/@massalabs/massa-as-sdk/assembly/std/address/Address#constructor
+         local.tee $0
+         i32.store offset=4
+        end
+        global.get $~lib/memory/__stack_pointer
+        i32.const 2240
+        i32.store offset=8
+       end
+       global.get $~lib/memory/__stack_pointer
+       i32.const 2240
+       i32.store offset=12
+      end
+      global.get $~lib/memory/__stack_pointer
+      i32.const 2240
+      i32.store offset=16
+     end
+     global.get $~lib/memory/__stack_pointer
+     i32.const 2240
+     i32.store offset=20
+    end
+    global.get $~lib/memory/__stack_pointer
+    i32.const 2240
+    i32.store offset=24
+   end
+   global.get $~lib/memory/__stack_pointer
+   i32.const 2240
+   i32.store offset=28
+  end
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  global.get $~lib/memory/__stack_pointer
+  i32.const 2240
+  i32.store offset=36
+  global.get $~lib/memory/__stack_pointer
+  i32.const 2240
+  i32.store offset=40
+  global.get $~lib/memory/__stack_pointer
+  i32.const 2240
+  i32.store offset=44
+  global.get $~lib/memory/__stack_pointer
+  i32.const 2240
+  i32.store offset=48
+  global.get $~lib/memory/__stack_pointer
+  i32.const 2240
+  i32.store offset=52
+  global.get $~lib/memory/__stack_pointer
+  i32.const 2240
+  i32.store offset=56
+  local.get $0
+  call $assembly/structs/post/Post#constructor
+  local.set $0
+  global.get $~lib/memory/__stack_pointer
+  i32.const 60
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  local.get $0
+ )
  (func $assembly/structs/post/Post#deserialize (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i64)
   (local $4 i32)
@@ -17480,7 +17548,7 @@
   i32.const 60
   memory.fill
   global.get $~lib/memory/__stack_pointer
-  local.set $1
+  local.set $3
   global.get $~lib/memory/__stack_pointer
   i32.const 16
   i32.sub
@@ -17496,30 +17564,30 @@
   i32.const 16
   i32.const 52
   call $~lib/rt/itcms/__new
-  local.tee $3
+  local.tee $2
   i32.store
   global.get $~lib/memory/__stack_pointer
-  local.get $3
+  local.get $2
   i32.store offset=4
-  local.get $3
+  local.get $2
   i32.const 0
   call $"assembly/libraries/PersistentMap/PersistentMap<~lib/string/String,assembly/structs/profile/Profile>#set:_elementPrefix"
   global.get $~lib/memory/__stack_pointer
-  local.get $3
+  local.get $2
   i32.store offset=4
-  local.get $3
+  local.get $2
   i32.const 0
   call $~lib/rt/itcms/Object#set:nextWithColor
   global.get $~lib/memory/__stack_pointer
-  local.get $3
+  local.get $2
   i32.store offset=4
-  local.get $3
+  local.get $2
   i32.const 0
   call $~lib/rt/itcms/Object#set:prev
   global.get $~lib/memory/__stack_pointer
-  local.get $3
+  local.get $2
   i32.store offset=4
-  local.get $3
+  local.get $2
   i32.const 0
   call $~lib/rt/itcms/Object#set:rtId
   global.get $~lib/memory/__stack_pointer
@@ -17529,38 +17597,38 @@
   local.tee $4
   i32.store offset=8
   global.get $~lib/memory/__stack_pointer
-  local.get $3
+  local.get $2
   i32.store offset=4
   global.get $~lib/memory/__stack_pointer
   local.get $4
   i32.store offset=12
-  local.get $3
+  local.get $2
   local.get $4
   call $"assembly/libraries/PersistentMap/PersistentMap<~lib/string/String,assembly/structs/profile/Profile>#set:_elementPrefix"
   global.get $~lib/memory/__stack_pointer
-  local.get $3
+  local.get $2
   i32.store offset=4
-  local.get $3
+  local.get $2
   local.get $4
   call $~lib/rt/itcms/Object#set:nextWithColor
   global.get $~lib/memory/__stack_pointer
-  local.get $3
+  local.get $2
   i32.store offset=4
-  local.get $3
+  local.get $2
   i32.const 32
   call $~lib/rt/itcms/Object#set:prev
   global.get $~lib/memory/__stack_pointer
-  local.get $3
+  local.get $2
   i32.store offset=4
-  local.get $3
+  local.get $2
   i32.const 0
   call $~lib/rt/itcms/Object#set:rtId
   global.get $~lib/memory/__stack_pointer
   i32.const 16
   i32.add
   global.set $~lib/memory/__stack_pointer
-  local.get $1
   local.get $3
+  local.get $2
   i32.store
   block $folding-inner0 (result i32)
    loop $while-continue|0
@@ -17569,7 +17637,7 @@
     i32.store offset=4
     local.get $0
     call $~lib/staticarray/StaticArray<u8>#get:length
-    local.get $2
+    local.get $1
     i32.gt_s
     if
      global.get $~lib/memory/__stack_pointer
@@ -17593,123 +17661,33 @@
      i32.const 0
      global.set $~argumentsLength
      global.get $~lib/memory/__stack_pointer
-     local.set $4
-     i32.const 0
-     local.set $1
-     global.get $~lib/memory/__stack_pointer
-     i32.const 60
-     i32.sub
-     global.set $~lib/memory/__stack_pointer
-     call $~stack_check
-     global.get $~lib/memory/__stack_pointer
-     i32.const 0
-     i32.const 60
-     memory.fill
-     block $10of10
-      block $8of10
-       block $6of10
-        block $5of10
-         block $4of10
-          block $3of10
-           block $2of10
-            block $1of10
-             block $outOfRange
-              global.get $~argumentsLength
-              br_table $1of10 $1of10 $2of10 $3of10 $4of10 $5of10 $6of10 $8of10 $8of10 $10of10 $10of10 $outOfRange
-             end
-             unreachable
-            end
-            global.get $~lib/memory/__stack_pointer
-            i32.const 2240
-            i32.store
-            global.get $~lib/memory/__stack_pointer
-            i32.const 2240
-            call $~lib/@massalabs/massa-as-sdk/assembly/std/address/Address#constructor
-            local.tee $1
-            i32.store offset=4
-           end
-           global.get $~lib/memory/__stack_pointer
-           i32.const 2240
-           i32.store offset=8
-          end
-          global.get $~lib/memory/__stack_pointer
-          i32.const 2240
-          i32.store offset=12
-         end
-         global.get $~lib/memory/__stack_pointer
-         i32.const 2240
-         i32.store offset=16
-        end
-        global.get $~lib/memory/__stack_pointer
-        i32.const 2240
-        i32.store offset=20
-       end
-       global.get $~lib/memory/__stack_pointer
-       i32.const 2240
-       i32.store offset=24
-      end
-      global.get $~lib/memory/__stack_pointer
-      i32.const 2240
-      i32.store offset=28
-     end
-     global.get $~lib/memory/__stack_pointer
-     i32.const 0
-     i32.store
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=32
-     global.get $~lib/memory/__stack_pointer
-     i32.const 2240
-     i32.store offset=36
-     global.get $~lib/memory/__stack_pointer
-     i32.const 2240
-     i32.store offset=40
-     global.get $~lib/memory/__stack_pointer
-     i32.const 2240
-     i32.store offset=44
-     global.get $~lib/memory/__stack_pointer
-     i32.const 2240
-     i32.store offset=48
-     global.get $~lib/memory/__stack_pointer
-     i32.const 2240
-     i32.store offset=52
-     global.get $~lib/memory/__stack_pointer
-     i32.const 2240
-     i32.store offset=56
-     local.get $1
-     call $assembly/structs/post/Post#constructor
-     local.set $1
-     global.get $~lib/memory/__stack_pointer
-     i32.const 60
-     i32.add
-     global.set $~lib/memory/__stack_pointer
-     local.get $4
-     local.get $1
+     call $assembly/structs/post/Post#constructor@varargs
+     local.tee $3
      i32.store offset=28
      global.get $~lib/memory/__stack_pointer
-     local.get $1
+     local.get $3
      i32.store offset=4
      global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store offset=8
      global.get $~lib/memory/__stack_pointer
-     local.get $1
+     local.get $3
      local.get $0
-     local.get $2
+     local.get $1
      call $assembly/structs/post/Post#deserialize
-     local.tee $2
+     local.tee $1
      i32.store offset=32
      global.get $~lib/memory/__stack_pointer
-     local.get $2
+     local.get $1
      i32.store offset=36
      global.get $~lib/memory/__stack_pointer
-     local.get $2
+     local.get $1
      i32.store offset=40
      global.get $~lib/memory/__stack_pointer
-     local.get $2
+     local.get $1
      i32.store offset=8
      global.get $~lib/memory/__stack_pointer
-     local.get $2
+     local.get $1
      i32.load offset=4
      local.tee $4
      i32.store offset=4
@@ -17745,16 +17723,16 @@
       br $folding-inner0
      end
      global.get $~lib/memory/__stack_pointer
-     local.get $2
+     local.get $1
      i32.store offset=44
      global.get $~lib/memory/__stack_pointer
-     local.get $2
+     local.get $1
      i32.store offset=48
      global.get $~lib/memory/__stack_pointer
-     local.get $2
+     local.get $1
      i32.store offset=8
      global.get $~lib/memory/__stack_pointer
-     local.get $2
+     local.get $1
      i32.load offset=4
      local.tee $4
      i32.store offset=4
@@ -17763,10 +17741,10 @@
      i32.eqz
      if
       global.get $~lib/memory/__stack_pointer
-      local.get $2
+      local.get $1
       i32.store offset=4
       global.get $~lib/memory/__stack_pointer
-      local.get $2
+      local.get $1
       i32.load offset=4
       local.tee $0
       i32.store offset=52
@@ -17788,30 +17766,30 @@
       unreachable
      end
      global.get $~lib/memory/__stack_pointer
-     local.get $2
+     local.get $1
      i32.store offset=56
      global.get $~lib/memory/__stack_pointer
-     local.get $2
+     local.get $1
      i32.store offset=4
-     local.get $2
+     local.get $1
      i32.load
-     local.set $2
+     local.set $1
      global.get $~lib/memory/__stack_pointer
-     local.get $3
+     local.get $2
      i32.store offset=4
      global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=8
      local.get $3
-     local.get $1
+     i32.store offset=8
+     local.get $2
+     local.get $3
      call $~lib/array/Array<~lib/string/String>#push
      br $while-continue|0
     end
    end
    global.get $~lib/memory/__stack_pointer
-   local.get $3
+   local.get $2
    i32.store offset=4
-   local.get $3
+   local.get $2
    i32.const 0
    call $~lib/@massalabs/as-types/assembly/result/Result<~lib/array/Array<assembly/structs/post/Post>>#constructor
   end
@@ -20332,6 +20310,858 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
+ (func $assembly/contracts/interfaces/IProfile/IProfile#constructor (param $0 i32) (result i32)
+  local.get $0
+  i32.const 55
+  call $byn$mgfn-shared$~lib/@massalabs/massa-as-sdk/assembly/std/address/Address#constructor
+ )
+ (func $assembly/contracts/interfaces/IProfile/IProfile#getPosts (param $0 i32) (param $1 i64) (result i32)
+  (local $2 i32)
+  (local $3 i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 36
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  call $~stack_check
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 36
+  memory.fill
+  global.get $~lib/memory/__stack_pointer
+  local.set $2
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=12
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.load
+  local.tee $0
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  i32.const 16448
+  i32.store offset=4
+  i32.const 0
+  global.set $~argumentsLength
+  call $~lib/@massalabs/as-types/assembly/argument/Args#constructor@varargs
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=12
+  local.get $3
+  local.get $1
+  call $"~lib/@massalabs/as-types/assembly/argument/Args#add<u64,void>"
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=8
+  local.get $2
+  local.get $0
+  i32.const 16448
+  local.get $3
+  i64.const 0
+  call $~lib/@massalabs/massa-as-sdk/assembly/std/contract/calls/call
+  local.tee $0
+  i32.store offset=16
+  global.get $~lib/memory/__stack_pointer
+  local.set $2
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=4
+  local.get $0
+  i32.const 0
+  call $~lib/@massalabs/as-types/assembly/argument/Args#constructor
+  local.set $0
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store
+  local.get $2
+  local.get $0
+  call $~lib/@massalabs/as-types/assembly/argument/Args#nextSerializableObjectArray<assembly/structs/post/Post>
+  local.tee $0
+  i32.store offset=20
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=24
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.load offset=4
+  local.tee $2
+  i32.store
+  local.get $2
+  call $~lib/string/String.__not
+  i32.eqz
+  if
+   global.get $~lib/memory/__stack_pointer
+   local.get $0
+   i32.store
+   global.get $~lib/memory/__stack_pointer
+   local.get $0
+   i32.load offset=4
+   local.tee $0
+   i32.store offset=28
+   local.get $0
+   i32.eqz
+   if
+    i32.const 9776
+    i32.const 9904
+    i32.const 70
+    i32.const 21
+    call $~lib/builtins/abort
+    unreachable
+   end
+   local.get $0
+   i32.const 9904
+   i32.const 70
+   i32.const 7
+   call $~lib/builtins/abort
+   unreachable
+  end
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store
+  local.get $0
+  i32.load
+  local.set $0
+  global.get $~lib/memory/__stack_pointer
+  i32.const 36
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  local.get $0
+ )
+ (func $assembly/contracts/accountsFactory/getPostsByAuthor (param $0 i32) (result i32)
+  (local $1 i64)
+  (local $2 i32)
+  (local $3 i32)
+  (local $4 i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 68
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  call $~stack_check
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 68
+  memory.fill
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.const 0
+  call $~lib/@massalabs/as-types/assembly/argument/Args#constructor
+  local.tee $2
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  call $~lib/@massalabs/as-types/assembly/argument/Args#nextString
+  local.tee $4
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=12
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=16
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.load offset=4
+  local.tee $0
+  i32.store
+  block $folding-inner1
+   block $folding-inner0
+    local.get $0
+    call $~lib/string/String.__not
+    i32.eqz
+    if
+     global.get $~lib/memory/__stack_pointer
+     local.get $4
+     i32.store
+     global.get $~lib/memory/__stack_pointer
+     local.get $4
+     i32.load offset=4
+     local.tee $0
+     i32.store offset=20
+     local.get $0
+     i32.eqz
+     br_if $folding-inner0
+     br $folding-inner1
+    end
+    global.get $~lib/memory/__stack_pointer
+    local.get $4
+    i32.store offset=24
+    global.get $~lib/memory/__stack_pointer
+    local.get $4
+    i32.store
+    local.get $3
+    local.get $4
+    i32.load
+    local.tee $0
+    i32.store offset=28
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    call $~lib/@massalabs/as-types/assembly/argument/Args#nextU64
+    local.tee $2
+    i32.store offset=32
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store offset=36
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.load offset=8
+    local.tee $3
+    i32.store
+    local.get $3
+    call $~lib/string/String.__not
+    i32.eqz
+    if
+     global.get $~lib/memory/__stack_pointer
+     local.get $2
+     i32.store
+     global.get $~lib/memory/__stack_pointer
+     local.get $2
+     i32.load offset=8
+     local.tee $0
+     i32.store offset=40
+     local.get $0
+     i32.eqz
+     br_if $folding-inner0
+     br $folding-inner1
+    end
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store offset=44
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store
+    local.get $2
+    i64.load
+    local.set $1
+    global.get $~lib/memory/__stack_pointer
+    global.get $assembly/contracts/storage/profileMap
+    local.tee $2
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store offset=16
+    local.get $2
+    local.get $0
+    call $"assembly/libraries/PersistentMap/PersistentMap<~lib/string/String,assembly/structs/profile/Profile>#contains"
+    i32.eqz
+    if
+     i32.const 17696
+     i32.const 9536
+     i32.const 505
+     i32.const 3
+     call $~lib/builtins/abort
+     unreachable
+    end
+    global.get $~lib/memory/__stack_pointer
+    global.get $assembly/contracts/storage/profileMap
+    local.tee $2
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    i32.const 14464
+    i32.store offset=48
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    local.get $0
+    call $"assembly/libraries/PersistentMap/PersistentMap<~lib/string/String,assembly/structs/profile/Profile>#getSome"
+    local.tee $0
+    i32.store offset=52
+    global.get $~lib/memory/__stack_pointer
+    local.set $2
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store offset=56
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.load
+    local.tee $0
+    i32.store offset=48
+    local.get $0
+    call $~lib/@massalabs/massa-as-sdk/assembly/std/address/Address#toString
+    local.set $0
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store offset=16
+    local.get $0
+    call $~lib/@massalabs/massa-as-sdk/assembly/std/address/Address#constructor
+    local.set $0
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store
+    local.get $2
+    local.get $0
+    call $assembly/contracts/interfaces/IProfile/IProfile#constructor
+    local.tee $0
+    i32.store offset=60
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    local.get $1
+    call $assembly/contracts/interfaces/IProfile/IProfile#getPosts
+    local.tee $0
+    i32.store offset=64
+    i32.const 0
+    global.set $~argumentsLength
+    call $~lib/@massalabs/as-types/assembly/argument/Args#constructor@varargs
+    local.set $2
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store offset=48
+    local.get $2
+    local.get $0
+    call $~lib/@massalabs/as-types/assembly/argument/Args#addSerializableObjectArray<assembly/structs/post/Post>
+    local.set $0
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store
+    local.get $0
+    call $~lib/@massalabs/as-types/assembly/argument/Args#serialize
+    local.set $0
+    global.get $~lib/memory/__stack_pointer
+    i32.const 68
+    i32.add
+    global.set $~lib/memory/__stack_pointer
+    local.get $0
+    return
+   end
+   i32.const 9776
+   i32.const 9904
+   i32.const 70
+   i32.const 21
+   call $~lib/builtins/abort
+   unreachable
+  end
+  local.get $0
+  i32.const 9904
+  i32.const 70
+  i32.const 7
+  call $~lib/builtins/abort
+  unreachable
+ )
+ (func $~lib/@massalabs/as-types/assembly/result/Result<assembly/structs/post/Post>#constructor (param $0 i32) (param $1 i32) (result i32)
+  local.get $0
+  local.get $1
+  i32.const 56
+  call $byn$mgfn-shared$~lib/@massalabs/as-types/assembly/result/Result<~lib/string/String>#constructor
+ )
+ (func $~lib/@massalabs/as-types/assembly/argument/Args#nextSerializable<assembly/structs/post/Post> (param $0 i32) (result i32)
+  (local $1 i32)
+  (local $2 i32)
+  (local $3 i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 56
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  call $~stack_check
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 56
+  memory.fill
+  global.get $~lib/memory/__stack_pointer
+  i32.const 2240
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  i32.const 2240
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  i32.const 2240
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  i32.const 2240
+  i32.store offset=12
+  global.get $~lib/memory/__stack_pointer
+  i32.const 2240
+  i32.store offset=16
+  global.get $~lib/memory/__stack_pointer
+  i32.const 2240
+  i32.store offset=20
+  i32.const 0
+  global.set $~argumentsLength
+  global.get $~lib/memory/__stack_pointer
+  call $assembly/structs/post/Post#constructor@varargs
+  local.tee $1
+  i32.store offset=24
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.load offset=4
+  local.tee $2
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  local.get $2
+  local.get $0
+  i32.load
+  call $assembly/structs/post/Post#deserialize
+  local.tee $2
+  i32.store offset=28
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.store offset=32
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.store offset=36
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.load offset=4
+  local.tee $3
+  i32.store
+  block $folding-inner0 (result i32)
+   local.get $3
+   call $~lib/string/String.__not
+   i32.eqz
+   if
+    global.get $~lib/memory/__stack_pointer
+    local.get $1
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    i32.const 14336
+    i32.store offset=8
+    global.get $~lib/memory/__stack_pointer
+    i32.const 14304
+    i32.store offset=12
+    i32.const 14336
+    i32.const 14304
+    call $~lib/string/String#concat
+    local.set $0
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store offset=4
+    local.get $1
+    local.get $0
+    call $~lib/@massalabs/as-types/assembly/result/Result<assembly/structs/post/Post>#constructor
+    br $folding-inner0
+   end
+   global.get $~lib/memory/__stack_pointer
+   local.get $0
+   i32.store
+   global.get $~lib/memory/__stack_pointer
+   local.get $2
+   i32.store offset=40
+   global.get $~lib/memory/__stack_pointer
+   local.get $2
+   i32.store offset=44
+   global.get $~lib/memory/__stack_pointer
+   local.get $2
+   i32.store offset=8
+   global.get $~lib/memory/__stack_pointer
+   local.get $2
+   i32.load offset=4
+   local.tee $3
+   i32.store offset=4
+   local.get $3
+   call $~lib/string/String.__not
+   i32.eqz
+   if
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store offset=4
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.load offset=4
+    local.tee $0
+    i32.store offset=48
+    local.get $0
+    i32.eqz
+    if
+     i32.const 9776
+     i32.const 9904
+     i32.const 70
+     i32.const 21
+     call $~lib/builtins/abort
+     unreachable
+    end
+    local.get $0
+    i32.const 9904
+    i32.const 70
+    i32.const 7
+    call $~lib/builtins/abort
+    unreachable
+   end
+   global.get $~lib/memory/__stack_pointer
+   local.get $2
+   i32.store offset=52
+   global.get $~lib/memory/__stack_pointer
+   local.get $2
+   i32.store offset=4
+   local.get $0
+   local.get $2
+   i32.load
+   call $~lib/@massalabs/as-types/assembly/argument/Args#set:_offset
+   global.get $~lib/memory/__stack_pointer
+   local.get $1
+   i32.store
+   local.get $1
+   i32.const 0
+   call $~lib/@massalabs/as-types/assembly/result/Result<assembly/structs/post/Post>#constructor
+  end
+  local.set $0
+  global.get $~lib/memory/__stack_pointer
+  i32.const 56
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  local.get $0
+ )
+ (func $assembly/contracts/interfaces/IProfile/IProfile#getPostById (param $0 i32) (param $1 i64) (result i32)
+  (local $2 i32)
+  (local $3 i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 36
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  call $~stack_check
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 36
+  memory.fill
+  global.get $~lib/memory/__stack_pointer
+  local.set $2
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=12
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.load
+  local.tee $0
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  i32.const 17776
+  i32.store offset=4
+  i32.const 0
+  global.set $~argumentsLength
+  call $~lib/@massalabs/as-types/assembly/argument/Args#constructor@varargs
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=12
+  local.get $3
+  local.get $1
+  call $"~lib/@massalabs/as-types/assembly/argument/Args#add<u64,void>"
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $3
+  i32.store offset=8
+  local.get $2
+  local.get $0
+  i32.const 17776
+  local.get $3
+  i64.const 0
+  call $~lib/@massalabs/massa-as-sdk/assembly/std/contract/calls/call
+  local.tee $0
+  i32.store offset=16
+  global.get $~lib/memory/__stack_pointer
+  local.set $2
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=4
+  local.get $0
+  i32.const 0
+  call $~lib/@massalabs/as-types/assembly/argument/Args#constructor
+  local.set $0
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store
+  local.get $2
+  local.get $0
+  call $~lib/@massalabs/as-types/assembly/argument/Args#nextSerializable<assembly/structs/post/Post>
+  local.tee $0
+  i32.store offset=20
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=24
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.load offset=4
+  local.tee $2
+  i32.store
+  local.get $2
+  call $~lib/string/String.__not
+  i32.eqz
+  if
+   global.get $~lib/memory/__stack_pointer
+   local.get $0
+   i32.store
+   global.get $~lib/memory/__stack_pointer
+   local.get $0
+   i32.load offset=4
+   local.tee $0
+   i32.store offset=28
+   local.get $0
+   i32.eqz
+   if
+    i32.const 9776
+    i32.const 9904
+    i32.const 70
+    i32.const 21
+    call $~lib/builtins/abort
+    unreachable
+   end
+   local.get $0
+   i32.const 9904
+   i32.const 70
+   i32.const 7
+   call $~lib/builtins/abort
+   unreachable
+  end
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=32
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store
+  local.get $0
+  i32.load
+  local.set $0
+  global.get $~lib/memory/__stack_pointer
+  i32.const 36
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  local.get $0
+ )
+ (func $assembly/contracts/accountsFactory/getPostById (param $0 i32) (result i32)
+  (local $1 i64)
+  (local $2 i32)
+  (local $3 i32)
+  (local $4 i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const -64
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  call $~stack_check
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.const 64
+  memory.fill
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.const 0
+  call $~lib/@massalabs/as-types/assembly/argument/Args#constructor
+  local.tee $2
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.set $3
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  call $~lib/@massalabs/as-types/assembly/argument/Args#nextString
+  local.tee $4
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=12
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.store offset=16
+  global.get $~lib/memory/__stack_pointer
+  local.get $4
+  i32.load offset=4
+  local.tee $0
+  i32.store
+  block $folding-inner1
+   block $folding-inner0
+    local.get $0
+    call $~lib/string/String.__not
+    i32.eqz
+    if
+     global.get $~lib/memory/__stack_pointer
+     local.get $4
+     i32.store
+     global.get $~lib/memory/__stack_pointer
+     local.get $4
+     i32.load offset=4
+     local.tee $0
+     i32.store offset=20
+     local.get $0
+     i32.eqz
+     br_if $folding-inner0
+     br $folding-inner1
+    end
+    global.get $~lib/memory/__stack_pointer
+    local.get $4
+    i32.store offset=24
+    global.get $~lib/memory/__stack_pointer
+    local.get $4
+    i32.store
+    local.get $3
+    local.get $4
+    i32.load
+    local.tee $0
+    i32.store offset=28
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    call $~lib/@massalabs/as-types/assembly/argument/Args#nextU64
+    local.tee $2
+    i32.store offset=32
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store offset=36
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.load offset=8
+    local.tee $3
+    i32.store
+    local.get $3
+    call $~lib/string/String.__not
+    i32.eqz
+    if
+     global.get $~lib/memory/__stack_pointer
+     local.get $2
+     i32.store
+     global.get $~lib/memory/__stack_pointer
+     local.get $2
+     i32.load offset=8
+     local.tee $0
+     i32.store offset=40
+     local.get $0
+     i32.eqz
+     br_if $folding-inner0
+     br $folding-inner1
+    end
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store offset=44
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    i32.store
+    local.get $2
+    i64.load
+    local.set $1
+    global.get $~lib/memory/__stack_pointer
+    global.get $assembly/contracts/storage/profileMap
+    local.tee $2
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store offset=16
+    local.get $2
+    local.get $0
+    call $"assembly/libraries/PersistentMap/PersistentMap<~lib/string/String,assembly/structs/profile/Profile>#contains"
+    i32.eqz
+    if
+     i32.const 17696
+     i32.const 9536
+     i32.const 527
+     i32.const 3
+     call $~lib/builtins/abort
+     unreachable
+    end
+    global.get $~lib/memory/__stack_pointer
+    global.get $assembly/contracts/storage/profileMap
+    local.tee $2
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    i32.const 14464
+    i32.store offset=48
+    global.get $~lib/memory/__stack_pointer
+    local.get $2
+    local.get $0
+    call $"assembly/libraries/PersistentMap/PersistentMap<~lib/string/String,assembly/structs/profile/Profile>#getSome"
+    local.tee $0
+    i32.store offset=52
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store offset=16
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.load
+    local.tee $0
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    call $assembly/contracts/interfaces/IProfile/IProfile#constructor
+    local.tee $0
+    i32.store offset=56
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    local.get $1
+    call $assembly/contracts/interfaces/IProfile/IProfile#getPostById
+    local.tee $0
+    i32.store offset=60
+    global.get $~lib/memory/__stack_pointer
+    local.get $0
+    i32.store
+    local.get $0
+    call $assembly/structs/post/Post#serialize
+    local.set $0
+    global.get $~lib/memory/__stack_pointer
+    i32.const -64
+    i32.sub
+    global.set $~lib/memory/__stack_pointer
+    local.get $0
+    return
+   end
+   i32.const 9776
+   i32.const 9904
+   i32.const 70
+   i32.const 21
+   call $~lib/builtins/abort
+   unreachable
+  end
+  local.get $0
+  i32.const 9904
+  i32.const 70
+  i32.const 7
+  call $~lib/builtins/abort
+  unreachable
+ )
  (func $assembly/structs/comment/Comment#serialize (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
@@ -21131,6 +21961,42 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
+ (func $export:assembly/contracts/accountsFactory/getPostsByAuthor (param $0 i32) (result i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 4
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  call $~stack_check
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store
+  local.get $0
+  call $assembly/contracts/accountsFactory/getPostsByAuthor
+  local.set $0
+  global.get $~lib/memory/__stack_pointer
+  i32.const 4
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  local.get $0
+ )
+ (func $export:assembly/contracts/accountsFactory/getPostById (param $0 i32) (result i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 4
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  call $~stack_check
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store
+  local.get $0
+  call $assembly/contracts/accountsFactory/getPostById
+  local.set $0
+  global.get $~lib/memory/__stack_pointer
+  i32.const 4
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  local.get $0
+ )
  (func $byn$mgfn-shared$~lib/@massalabs/as-types/assembly/result/Result<~lib/string/String>#constructor (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 12
@@ -21172,5 +22038,38 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
   local.get $2
+ )
+ (func $byn$mgfn-shared$~lib/@massalabs/massa-as-sdk/assembly/std/address/Address#constructor (param $0 i32) (param $1 i32) (result i32)
+  global.get $~lib/memory/__stack_pointer
+  i32.const 12
+  i32.sub
+  global.set $~lib/memory/__stack_pointer
+  call $~stack_check
+  global.get $~lib/memory/__stack_pointer
+  i64.const 0
+  i64.store
+  global.get $~lib/memory/__stack_pointer
+  i32.const 0
+  i32.store offset=8
+  global.get $~lib/memory/__stack_pointer
+  i32.const 4
+  local.get $1
+  call $~lib/rt/itcms/__new
+  local.tee $1
+  i32.store
+  global.get $~lib/memory/__stack_pointer
+  local.get $1
+  i32.store offset=4
+  global.get $~lib/memory/__stack_pointer
+  local.get $0
+  i32.store offset=8
+  local.get $1
+  local.get $0
+  call $"assembly/libraries/PersistentMap/PersistentMap<~lib/string/String,assembly/structs/profile/Profile>#set:_elementPrefix"
+  global.get $~lib/memory/__stack_pointer
+  i32.const 12
+  i32.add
+  global.set $~lib/memory/__stack_pointer
+  local.get $1
  )
 )

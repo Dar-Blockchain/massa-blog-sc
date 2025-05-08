@@ -654,21 +654,7 @@ export function getPosts(binaryArgs: StaticArray<u8>): StaticArray<u8> {
       // Retrieve regular posts.
       const post = postMap.get(i.toString(), new Post());
       posts.push(post);
-    } else if (repostsMap.contains(i.toString())) {
-      // Retrieve reposts.
-      const repost = repostsMap.get(i.toString(), new Repost());
-      const post = new Args(
-        call(
-          repost.authorProfileContract,
-          'getPost',
-          new Args().add(repost.originalPostId),
-          0,
-        ),
-      )
-        .nextSerializable<Post>()
-        .unwrap();
-      posts.push(post);
-    }
+    } 
   }
 
   return new Args().addSerializableObjectArray<Post>(posts).serialize(); // Serialize and return the posts.
@@ -1004,3 +990,24 @@ export function deleteAccount(): void {
   // Emit an event indicating account deletion
   generateEvent(createEvent('AccountDeleted', [callee().toString(), owner]));
 }
+
+/**
+ * Retrieves a post by its ID.
+ *
+ * @param {StaticArray<u8>} binaryArgs - Serialized arguments containing the post ID.
+ * @returns {StaticArray<u8>} - Serialized post data.
+ */
+export function getPostById(binaryArgs: StaticArray<u8>): StaticArray<u8> {
+  const args = new Args(binaryArgs);
+  const postId = args.nextU64().unwrap();
+
+  // Ensure the post exists
+  assert(postMap.contains(postId.toString()), 'Post not found');
+
+  // Get the post from storage
+  const post = postMap.get(postId.toString(), new Post());
+
+  // Return serialized post data
+  return post.serialize();
+}
+
