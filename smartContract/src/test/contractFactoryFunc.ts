@@ -161,3 +161,35 @@ export async function followProfile(
     return false;
   }
 }
+
+export async function addPostComment(
+  contract: SmartContract,
+  postId: bigint,
+  text: string,
+  parentCommentId?: bigint  // Optional parameter for reply comments
+): Promise<boolean> {
+  console.log('Adding comment to post:', postId);
+  
+  const args = new Args()
+    .addU64(postId)
+    .addString(text);
+  
+  // Add parent comment ID if this is a reply
+  if (parentCommentId !== undefined) {
+    args.addU64(parentCommentId);
+  }
+
+  const operation = await contract.call('addPostComment', args.serialize(), {
+    coins: Mas.fromString('0.01'),  // Small fee for commenting
+  });
+
+  const operationStatus = await operation.waitFinalExecution();
+
+  if (operationStatus === OperationStatus.Success) {
+    console.log('Comment added successfully');
+    return true;
+  } else {
+    console.error('Operation failed with status:', operationStatus);
+    return false;
+  }
+}

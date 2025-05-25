@@ -38,4 +38,27 @@ export class IProfile {
     );
     return new Args(res).nextSerializable<Post>().unwrap();
   }
+
+  /**
+   * Add a comment to a post
+   * @param postId The ID of the post to comment on
+   * @param text The comment text
+   * @param parentCommentId Optional parent comment ID for replies
+   */
+  addPostComment(postId: u64, text: string, parentCommentId: u64 = 0): void {
+    const args = new Args()
+      .add(postId)
+      .add(text);
+    
+    if (parentCommentId > 0) {
+      args.add(parentCommentId);
+    }
+
+    call(
+      this._origin,
+      'addPostComment',
+      args,
+      0
+    );
+  }
 }

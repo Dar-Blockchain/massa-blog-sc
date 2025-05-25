@@ -12,6 +12,7 @@ import {
   getPostsByAuthor,
   getPostById,
   followProfile,
+  addPostComment,
 } from './test/contractFactoryFunc';
 import { getScByteCode } from './utils';
 
@@ -262,7 +263,59 @@ async function testFollowProfile(contract: SmartContract, user: string, userToFo
   }
 }
 
+async function testAddPostComment(contract: SmartContract, postId: bigint, text: string, parentCommentId?: bigint) {
+  try {
+    console.log('Testing add post comment functionality...');
+    console.log('Adding comment to post ID:', postId.toString());
+    console.log('Comment text:', text);
+    
+    if (parentCommentId) {
+      console.log('Reply to comment ID:', parentCommentId.toString());
+    }
+    
+    const success = await addPostComment(contract, postId, text, parentCommentId);
+    
+    if (success) {
+      console.log('Comment added successfully!');
+    } else {
+      console.log('Failed to add comment');
+    }
+    
+    return success;
+  } catch (error) {
+    console.error('Error in add post comment test:', error);
+    throw error;
+  }
+}
+
 // Test follow profile functionality (add this after other tests)
 console.log('Testing follow profile functionality...');
 // You can replace this with any valid user address you want to follow
-await testFollowProfile(contract,account.address.toString(), account2.address.toString());
+//await testFollowProfile(contract,account.address.toString(), account2.address.toString());
+
+// Test comment functionality
+if (authorPosts.length > 0) {
+  console.log('\n=== Testing Comment Functionality ===');
+  const firstPost = authorPosts[0];
+  
+  // Test adding a regular comment
+  console.log('Testing regular comment...');
+  const commentSuccess = await testAddPostComment(
+    contract, 
+    firstPost.id, 
+    "This is a great post! Thanks for sharing."
+  );
+  
+  if (commentSuccess) {
+    // Test adding a reply comment (assuming first comment has ID 1)
+    console.log('Testing reply comment...');
+    await testAddPostComment(
+      contract, 
+      firstPost.id, 
+      "I totally agree with the previous comment!", 
+      BigInt(1) // Reply to the first comment
+    );
+  }
+  
+  console.log('Comment tests completed!');
+}

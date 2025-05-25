@@ -533,3 +533,38 @@ export function getPostById(binaryArgs: StaticArray<u8>): StaticArray<u8> {
 
   return post.serialize();
 }
+
+/**
+ * Adds a comment to a post via the caller's profile contract
+ *
+ * @param {StaticArray<u8>} binaryArgs - Serialized arguments containing the post ID, comment text, and optional parent comment ID
+ */
+export function addPostComment(binaryArgs: StaticArray<u8>): void {
+  const args = new Args(binaryArgs);
+  const postId = args.nextU64().expect('Post ID required');
+  const text = args.nextString().expect('Comment text required');
+  const parentCommentIdOpt = args.nextU64(); // Optional parent comment ID
+
+  // Get caller's profile from profileMap
+  assert(profileMap.contains(caller().toString()), "Caller profile not found");
+  const profile = profileMap.getSome(caller().toString());
+
+  // Create IProfile instance for the caller's profile
+  const iProfile = new IProfile(profile.profileContract);
+
+  // Call addPostComment on the profile contract
+  if (!parentCommentIdOpt.isErr()) {
+    const parentCommentId = parentCommentIdOpt.unwrap();
+    iProfile.addPostComment(postId, text, parentCommentId);
+  } else {
+    iProfile.addPostComment(postId, text);
+  }
+
+  generateEvent(
+    createEvent('CommentAdded', [
+      caller().toString(),
+      postId.toString(),
+      text
+    ])
+  );
+}

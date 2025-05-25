@@ -1010,4 +1010,3 @@ export function getPostById(binaryArgs: StaticArray<u8>): StaticArray<u8> {
   // Return serialized post data
   return post.serialize();
 }
-
